@@ -1,0 +1,528 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #132416;
+    color: white;
+}
+
+/* Barra de navegación */
+header {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    position: fixed;
+    right: 50px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+nav.nav-buttons{
+    gap: 30px;
+}
+
+/* diseño boton*/
+
+ 
+nav ul li {
+    list-style: none;
+}
+
+.nav-btn {
+    background-color: #ffffff10; /* Color semitransparente */
+    color: white;
+    border: 1px solid #ffffff33;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #ffffff30;
+    transform: scale(1.05);
+}
+/* Sección principal */
+.hero {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f3424;
+    border-radius: 40px;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: rgb(219, 60, 60);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* Selector de presupuesto */
+.budget-selector {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #1f3424;
+    border-radius: 30px;
+    padding: 8px 15px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.budget-selector label {
+    color: white;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.budget-selector select {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 0.9rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.budget-selector select option {
+    background-color: #1f3424;
+    color: white;
+}
+
+/* Campo personalizado de presupuesto */
+.custom-budget {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.custom-budget input {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+/* Eliminar las flechas (spinners) del input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* Imágenes decorativas */
+
+.food-images img[alt="Burrito"] {
+    position: fixed;
+    left: -32px;
+    bottom: -110px;
+    border: 20 px;
+    transform: rotate(-8deg);
+    max-width: 300px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.food-images img[alt="bandejita"] {
+    position: fixed;
+    right: -55px;
+    bottom: -50px;
+    border: 20 px;
+    transform: rotate(-20deg);
+    max-width: 300px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+/* LOGIN */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 360px;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+    padding: 45px;
+    text-align: center;
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form button:hover {
+    background: #43A047;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.register-form {
+    display: none;
+}
+
+/* Fondo oscuro detrás del login */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* Botón de cerrar (❌) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+    z-index: 1001;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* LO MAS TOP AJUSTES */
+
+body.top-restaurants {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d1b14;
+    color: #f4f4f4;
+  }
+  
+  .top-restaurants {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .top-restaurants h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .top-restaurants p {
+    font-size: 1rem;
+    color: #b5c1b2;
+    margin-bottom: 2rem;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    
+  }
+  
+  .restaurant-card {
+    background-color: #14291f;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  
+  .restaurant-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .restaurant-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: fill;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-content h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .rating {
+    color: #fcd34d;
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
+  }
+  
+  .distance {
+    font-size: 0.85rem;
+    color: #9fae9e;
+    margin: 0.5rem 0;
+  }
+  
+  button {  
+    margin-top: 1rem;
+    background-color: #1f4033;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #2d5946;
+  }
+  
+  .badge {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #ffb703;
+    color: #1e1e1e;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  /* CSS LUGARES */
+
+  .lugares-zona {
+    padding: 20px;
+  }
+  
+  .lugar-carta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f3424;
+    border: 1px solid #2c4d36;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .lugar-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+  }
+  
+  .lugar-info {
+    flex: 1;
+    color: #fff;
+  }
+  
+  .lugar-mapa-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .lugar-mapa-btn:hover {
+    background-color: #e64a19;
+  }
+  
+  .lugar-mapa-popup {
+    margin-top: 15px;
+  }
+
+  /*css mapa modal*/
+
+  .modal-mapa {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+  }
+  
+  .modal-contenido {
+    background-color: #1f3424;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .cerrar-modal {
+    color: white;
+    position: absolute;
+    top: -4.8px;
+    right: 1.5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .cerrar-modal:hover {
+    color: #ff3b3b;
+  }
+  
+
+  /* resaltado ver mas*/
+  @keyframes parpadeo {
+    0% { box-shadow: 0 0 10px 2px gold; }
+    50% { box-shadow: 0 0 10px 6px orange; }
+    100% { box-shadow: 0 0 10px 2px gold; }
+  }
+  
+  .resaltado {
+    animation: parpadeo 1s ease-in-out infinite;
+    border-radius: 10px;
+  }
+  

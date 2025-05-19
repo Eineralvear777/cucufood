@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CucuFood</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+    <header>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+        <nav>
+            <div class="logo">CUCUFOOD</div>
+            <ul class="nav-links">
+                <li><button class="nav-btn"><a href="Lomejor.html">LO MÁS TOP</a></button></li>
+                <li><button class="nav-btn"><a href="lugares.html">LUGARES</a></button></li>
+                <li><button class="nav-btn" onclick="toggleLogin()">INGRESAR</button></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- FONDO OSCURO -->
+    <div id="overlay" style="display:none;" onclick="closeLogin()"></div>
+
+    <!-- LOGIN FLOTANTE -->
+    <div class="login-page" id="loginPage">
+        <div class="close-btn" onclick="closeLogin()">❌</div>
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="Nombre" />
+                <input type="password" placeholder="Contraseña" />
+                <input type="text" placeholder="Correo electrónico" />
+                <button>Crear</button>
+                <p class="message">Ya registrado? <a href="lobby.html" onclick="showLoginForm()">Iniciar sesión</a></p>
+            </form>
+            <form class="login-form">
+                <input type="text" placeholder="Usuario" />
+                <input type="password" placeholder="Contraseña" />
+                <button>login</button>
+                <p class="message">No registrado? <a href="#" onclick="showRegisterForm()">Crear una cuenta</a></p>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Hero principal -->
+    <section class="hero">
+        <h1>DESCUBRE EL MEJOR LUGAR CON SU PRESUPUESTO</h1>
+        <div class="search-container">
+            <div class="search-bar">
+                <button class="search-btn">🔍</button>
+                <input type="text" placeholder="Nombre del restaurante">
+                <button class="voice-btn">🎤</button>
+            </div>
+            <div class="budget-selector">
+                <label for="budget">Presupuesto:</label>
+                <select id="budget" name="budget">
+                    <option value="cualquiera" selected>Cualquier precio</option>
+                    <option value="personalizado">Presupuesto personalizado</option>
+                    <option value="economico">Económico (0 - 50.000)</option>
+                    <option value="moderado">Moderado (50.000 - 80.000)</option>
+                    <option value="alto">Alto (80.000 - 150.000)</option>
+                    <option value="premium">Premium (150.000 o más)</option>
+                </select>
+                <div id="custom-budget" class="custom-budget hidden">
+                    <input type="number" id="budget-value" placeholder="Ingrese monto" min="0">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="food-images">
+        <img src="Imagenes/burro.png" alt="Burrito">
+        <img src="Imagenes/bandejita.png" alt="bandejita">
+    </section>
+</body>
+
+</html>
