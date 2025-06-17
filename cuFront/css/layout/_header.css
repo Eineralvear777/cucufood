@@ -1,75 +1,122 @@
+/* cuFront/css/layout/_header.css */
+
 .main-header {
-    background-color: var(--primary-color);
-    padding: calc(var(--spacing-unit) * 2) var(--spacing-md);
-    color: white;
+    background-color: white; /* Cambiado a blanco para coincidir con el diseño anterior */
+    padding: var(--spacing-md); /* Ajustado padding */
+    color: var(--text-color); /* Color de texto general */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--box-shadow-sm);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra de Tailwind 'shadow' */
     flex-wrap: wrap;
-}
+    position: sticky; /* Sticky para que la navegación se mantenga arriba */
+    top: 0;
+    z-index: 50;
+} /* Adaptado de topres.css header */
+
 .main-header__logo {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Tamaño de fuente del logo */
     font-weight: bold;
-    color: white;
+    color: var(--primary-color); /* Color principal para "Cucu" */
     text-decoration: none;
     padding-right: var(--spacing-md);
 }
+.main-header__logo span { /* Estilo para la segunda parte del logo "Food" */
+    color: var(--text-color); /* Cambiado a color de texto general para "Food" */
+}
+
 .main-nav {
     display: flex;
     flex-grow: 1;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Alinear elementos a la derecha */
     align-items: center;
     transition: max-height 0.3s ease-out;
     max-height: 100px;
     overflow: hidden;
 }
 .main-nav a {
-    color: white;
+    color: var(--text-color-light); /* Color de texto para los enlaces */
     text-decoration: none;
     padding: var(--spacing-xs) var(--spacing-sm);
     margin-left: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease;
+    font-weight: 500; /* Medium font weight */
 }
-.main-nav a:hover,
+.main-nav a:hover {
+    color: var(--primary-color); /* Color de hover */
+}
 .main-nav a.active {
-    background-color: var(--primary-color-dark);
+    background-color: var(--primary-color-dark); /* Fondo para enlace activo */
+    color: white; /* Color de texto para enlace activo */
 }
+
+/* Botón de toggle para menú móvil (☰) */
 .nav__toggle-btn {
-    display: none;
+    display: none; /* Oculto por defecto en desktop */
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color); /* Color del icono del menú */
     font-size: 2rem;
     cursor: pointer;
     padding: var(--spacing-xs);
 }
+
+/* Estilos para el menú móvil */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;
         align-items: flex-start;
+        padding-top: var(--spacing-sm); /* Ajuste de padding para móviles */
+        padding-bottom: var(--spacing-sm);
     }
     .main-header__logo {
         margin-bottom: var(--spacing-sm);
+        padding-left: var(--spacing-md); /* Alineación del logo en móvil */
+        padding-right: 0;
+        width: 100%; /* El logo ocupa todo el ancho arriba */
     }
     .main-nav {
         flex-direction: column;
         width: 100%;
-        max-height: 0;
+        max-height: 0; /* Menú colapsado por defecto */
         justify-content: flex-start;
         padding-bottom: 0;
+        align-items: center; /* Centrar enlaces en móvil */
     }
     .main-nav.is-open {
-        max-height: 300px;
+        max-height: 300px; /* Altura máxima cuando el menú está abierto */
         padding-bottom: var(--spacing-md);
     }
     .main-nav a {
         width: 100%;
-        margin: var(--spacing-xs) 0;
+        margin: var(--spacing-xs) 0; /* Margen vertical entre enlaces */
         text-align: center;
         padding: var(--spacing-sm);
+        border-radius: 2rem; /* Bordes más redondeados para botones de navegación móvil */
+        font-size: 1.1rem; /* Fuente más grande para móvil */
     }
+    /* Clases específicas para botones/enlaces en el menú móvil (de inicio.css) */
+    .main-nav a.golden-glow,
+    .main-nav a.btn-orange-nav {
+        min-width: 0; /* Ancho mínimo no aplicado en móvil */
+        margin-top: 16px; /* Espaciado entre botones */
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        border-radius: 2rem;
+        display: block;
+        box-sizing: border-box;
+    }
+    .main-nav a.golden-glow {
+        margin-top: 24px; /* Un poco más de espacio para el primer botón especial */
+    }
+
     .nav__toggle-btn {
         display: block;
         position: absolute;

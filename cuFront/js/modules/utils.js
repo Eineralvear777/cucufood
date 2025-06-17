@@ -1,3 +1,6 @@
+// cuFront/js/modules/utils.js
+// Se mantiene la misma lógica para evitar conflictos con el setup del menú en main.js
+
 export function isValidEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -41,6 +44,10 @@ export function showMessage(element, message, type, duration = 3000) {
         }, duration);
     }
 }
+
+// Este setupGlobalListeners ya maneja el menú de hamburguesa del header.
+// La llamada a setupLocationIcons() y la inicialización de auth_ui.js
+// se están haciendo directamente en main.js para mayor control.
 export function setupGlobalListeners() {
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.querySelector('.main-nav');

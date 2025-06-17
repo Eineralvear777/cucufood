@@ -1,3 +1,11 @@
+/* cuFront/css/base/_typography.css */
+
+/* Se define la fuente Poppins como la principal, según inicio.css y topres.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color); /* Mantenemos el color de texto de variables.css */
+}
+
 h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -24,4 +32,51 @@ a:hover {
 small {
     font-size: 0.875rem;
     color: var(--text-color-light);
+}
+
+/* Nuevos estilos de tipografía de inicio.css / topres.css */
+.fancy-title {
+  font-family: 'Playfair Display', serif; /* Añadido de topres.css */
+}
+
+/* Animaciones globales (movidas desde topres.css) */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.2s infinite;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-pop {
+  animation: pop 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+/* Animación de degradado de oro para títulos específicos (movida de topres.css) */
+.hero-gold-title {
+  background: linear-gradient(92deg, #FFD700 10%, #FFF8DC 40%, #FFB347 60%, #FFD700 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  background-size: 400% 100%;
+  animation: gold-gradient-move 6s linear infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes gold-gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }

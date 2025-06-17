@@ -1,3 +1,4 @@
+// cuFront/js/modules/dom_helpers.js
 export function createElementWithClass(tagName, classNames = []) {
     const element = document.createElement(tagName);
     if (classNames.length > 0) {

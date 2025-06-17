@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CucuFood - Top Restaurantes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body id="top-restaurants-page">
     <header class="main-header">
@@ -19,17 +18,249 @@
             <a href="index.html">Inicio</a>
             <a href="topres.html" class="active">Top Restaurantes</a>
             <a href="perfil.html">Mi Perfil</a>
-            <a href="login.html">Iniciar Sesión</a>
+            <a href="#" id="login-button-header" class="btn-orange-nav">Iniciar Sesión</a>
+            <div id="user-profile-menu-header" class="relative hidden">
+                <button id="profile-icon-btn-header" class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 focus:outline-none">
+                    <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                <div id="profile-dropdown-header" class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50 hidden">
+                    <div class="px-4 py-3 border-b">
+                        <div class="font-semibold text-gray-800" id="profile-username-header">Usuario</div>
+                        <div class="text-sm text-gray-500" id="profile-email-header">correo@ejemplo.com</div>
+                    </div>
+                    <a href="perfil.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-50">Mi perfil</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-50">Configuración</a>
+                    <a href="#" id="logout-btn-header" class="block px-4 py-2 text-red-500 hover:bg-orange-50">Cerrar sesión</a>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="main-content">
-        <section class="top-restaurants-page">
-            <div class="container">
-                <div class="top-restaurants-header">
-                    <h1>Los Restaurantes Más Valorados de Cúcuta</h1>
-                    <p>Descubre los lugares preferidos por nuestros usuarios.</p>
+        <section id="top" class="hero-section text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <span class="hero-highlight">⭐ Lo más top de la ciudad</span>
+                    <h1 class="fancy-title hero-gold-title text-4xl md:text-5xl font-bold mb-4 relative">
+                    Restaurantes Top
+                    <span class="gold-shine"></span>
+                    </h1>
+                    <p class="hero-desc mb-8">Descubre los lugares más exclusivos, mejor valorados y con experiencias únicas para foodies en Cúcuta. ¡Solo lo mejor para ti!</p>
                 </div>
-                <div id="top-restaurants-list" class="top-restaurants-list"></div>
+            </div>
+        </section>
+        <section id="restaurantes-top" class="py-12 px-4 bg-white">
+            <div class="container mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="fancy-title text-3xl font-bold">Lo mas top de Cucúta en este momento</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/goat.jpg" alt="El Jardín Secreto" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">El Jardín Secreto</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">5.0</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-map="Centro Histórico">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Centro Histórico</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/mbp.jpg" alt="Fuego & Brasas" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">Fuego & Brasas</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">4.9</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-map="Zona Financiera">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Zona Financiera</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/spezia.jpg" alt="Sakura Fusion" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">Sakura Fusion</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">4.8</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-map="Distrito Artístico">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Distrito Artístico</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/goat.jpg" alt="Bistro Parisien" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">Bistro Parisien</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">4.7</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-map="Barrio Francés">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Barrio Francés</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/mbp.jpg" alt="Mar Azul" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">Mar Azul</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">4.9</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-map="Paseo Marítimo">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Paseo Marítimo</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-card bg-white rounded-xl overflow-hidden shadow-lg relative">
+                        <div class="img-top-container">
+                            <img src="img/spezia.jpg" alt="La Terraza" class="top-card-img-topres" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="fancy-title text-xl font-bold mb-2">La Terraza</h3>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-amber-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">4.8</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <svg class="w-4 h-4 mr-1 location-icon cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"data-map="Zona Colonial">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Zona Colonial</span>
+                            </div>
+                            <button class="menu-btn">Menú</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -37,7 +268,101 @@
         <div class="container">
             <p>&copy; 2023 CucuFood. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
         </div>
+        <div id="user-menu-container-footer" class="relative hidden">
+            <button id="user-menu-button-footer" class="focus:outline-none flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 transition">
+                <img id="footer-profile-foto" src="" alt="Perfil" class="object-cover w-full h-full rounded-full hidden" />
+                <svg id="footer-profile-icon" class="w-7 h-7 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </button>
+            <div id="user-dropdown-footer" class="hidden absolute right-0 bottom-12 mb-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 origin-bottom animate-fadeInUp">
+                <a href="perfil.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Mi perfil</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Configuración</a>
+                <a href="#" id="logout-btn-footer" class="block px-4 py-2 text-red-600 hover:bg-orange-100">Cerrar sesión</a>
+            </div>
+        </div>
     </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Iniciar Sesión</h2>
+                <button class="close-button" id="close-login-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="login-email" class="form-input" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="form-label">Contraseña</label>
+                        <input type="password" id="login-password" class="form-input" placeholder="Tu contraseña" required>
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Recordarme</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <div class="register-link">
+                        ¿No tienes una cuenta? <a href="#" id="show-register">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Crear Cuenta</h2>
+                <button class="close-button" id="close-register-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name" class="form-label">Nombre completo</label>
+                        <input type="text" id="register-name" class="form-input" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="register-email" class="form-input" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password" class="form-label">Contraseña</label>
+                        <input type="password" id="register-password" class="form-input" placeholder="Crea una contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password" class="form-label">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" class="form-input" placeholder="Confirma tu contraseña" required>
+                    </div>
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">Crear Cuenta</button>
+                    <div class="login-link">
+                        ¿Ya tienes una cuenta? <a href="#" id="show-login">Iniciar Sesión</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="map-modal" class="modal">
+        <div class="map-modal-content">
+            <div class="map-locations-list" id="map-locations-list"></div>
+            <div class="map-iframe-container">
+                <button id="close-map-modal">×</button>
+                <iframe id="map-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="js/main.js" type="module" defer></script>
 </body>
 </html>

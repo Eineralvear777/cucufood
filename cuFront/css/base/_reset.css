@@ -1,3 +1,5 @@
+/* cuFront/css/base/_reset.css */
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -7,13 +9,13 @@ html, body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Ajustes globales de body de inicio.css y topres.css */
+    scroll-behavior: smooth; /* Añadido de topres.css */
+    background-color: #f8f9fa; /* Color de fondo de inicio.css */
 }
-body {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    background-color: var(--bg-light);
-}
+
+/* Eliminamos la definición de font-family de aquí para moverla a _typography.css */
+
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: calc(var(--spacing-unit) * 2);
@@ -45,4 +47,15 @@ button, input, select, textarea {
 }
 button {
     cursor: pointer;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

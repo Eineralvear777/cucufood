@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CucuFood - Mi Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body id="profile-page">
+<body id="profile-page" class="bg-gradient-to-br from-orange-50 via-white to-yellow-100 min-h-screen">
     <header class="main-header">
         <a href="index.html" class="main-header__logo">CucuFood</a>
         <button id="menu-toggle" class="nav__toggle-btn" aria-label="Abrir/Cerrar menú de navegación">
@@ -19,33 +18,62 @@
             <a href="index.html">Inicio</a>
             <a href="topres.html">Top Restaurantes</a>
             <a href="perfil.html" class="active">Mi Perfil</a>
-            <a href="login.html">Iniciar Sesión</a>
+            <a href="#" id="login-button-header" class="btn-orange-nav">Iniciar Sesión</a>
+            <div id="user-profile-menu-header" class="relative hidden">
+                <button id="profile-icon-btn-header" class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 focus:outline-none">
+                    <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </button>
+                <div id="profile-dropdown-header" class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50 hidden">
+                    <div class="px-4 py-3 border-b">
+                        <div class="font-semibold text-gray-800" id="profile-username-header">Usuario</div>
+                        <div class="text-sm text-gray-500" id="profile-email-header">correo@ejemplo.com</div>
+                    </div>
+                    <a href="perfil.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-50">Mi perfil</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-50">Configuración</a>
+                    <a href="#" id="logout-btn-header" class="block px-4 py-2 text-red-500 hover:bg-orange-50">Cerrar sesión</a>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="main-content">
         <section class="profile-page">
             <div class="container">
-                <div class="profile-container">
-                    <div class="profile-header">
-                        <img src="assets/images/user-avatar.jpg" alt="Avatar de Usuario" class="profile-avatar">
-                        <h2>Nombre del Usuario</h2>
-                        <p class="text-color-light">correo@ejemplo.com</p>
+                <div class="profile-container max-w-2xl mx-auto mt-12 rounded-xl shadow-lg p-8" style="background: linear-gradient(135deg, #fffbe6 0%, #ffe5ec 100%);">
+                    <div class="flex flex-col items-center mb-8">
+                        <div class="w-28 h-28 rounded-full bg-orange-100 flex items-center justify-center mb-4 overflow-hidden relative group">
+                            <img id="profile-foto" src="" alt="Foto de perfil" class="object-cover w-full h-full rounded-full hidden" />
+                            <svg id="profile-icon" class="w-20 h-20 text-orange-400 absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <label for="input-foto" class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white text-xs text-center py-1 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity rounded-b-full">Cambiar foto</label>
+                            <input type="file" id="input-foto" accept="image/*" class="hidden" />
+                        </div>
+                        <h2 class="text-2xl font-bold mb-1" id="profile-nombre">Nombre del Usuario</h2>
+                        <p class="text-gray-500 mb-2" id="profile-correo">correo@ejemplo.com</p>
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Miembro desde 2024</span>
                     </div>
-                    <div class="profile-info">
-                        <div class="profile-info-group">
-                            <label>Nombre:</label>
-                            <span id="profile-name-display">Juan Pérez</span>
-                            <input type="text" id="profile-name-input" value="Juan Pérez" style="display: none;">
-                        </div>
-                        <div class="profile-info-group">
-                            <label>Teléfono:</label>
-                            <span id="profile-phone-display">300-123-4567</span>
-                            <input type="text" id="profile-phone-input" value="300-123-4567" style="display: none;">
-                        </div>
-                        <div class="profile-info-group">
-                            <label>Dirección:</label>
-                            <span id="profile-address-display">Calle 10 # 15-20, Cúcuta</span>
-                            <input type="text" id="profile-address-input" value="Calle 10 # 15-20, Cúcuta" style="display: none;">
+                    <div class="profile-info mb-8">
+                        <h3 class="text-lg font-semibold mb-2">Información personal</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-600 text-sm mb-1">Nombre</label>
+                                <span id="profile-name-display" class="form-input-display">Juan Pérez</span>
+                                <input type="text" id="profile-name-input" class="form-input w-full" value="Juan Pérez" style="display: none;">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 text-sm mb-1">Teléfono</label>
+                                <span id="profile-phone-display" class="form-input-display">300-123-4567</span>
+                                <input type="text" id="profile-phone-input" class="form-input w-full" value="300-123-4567" style="display: none;">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 text-sm mb-1">Dirección</label>
+                                <span id="profile-address-display" class="form-input-display">Calle 10 # 15-20, Cúcuta</span>
+                                <input type="text" id="profile-address-input" class="form-input w-full" value="Calle 10 # 15-20, Cúcuta" style="display: none;">
+                            </div>
                         </div>
                     </div>
                     <div class="profile-actions">
@@ -56,6 +84,16 @@
                         <button id="logout-btn" class="btn btn--error">Cerrar Sesión</button>
                     </div>
                     <div id="profile-message" class="message-area"></div>
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold mb-2">Preferencias</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">🍕 Pizzerías</span>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">🍣 Sushi</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">🥗 Saludable</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">🍔 Hamburguesas</span>
+                        </div>
+                        <button class="btn-orange-nav">Editar preferencias</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -64,51 +102,101 @@
         <div class="container">
             <p>&copy; 2023 CucuFood. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
         </div>
+        <div id="user-menu-container-footer" class="relative hidden">
+            <button id="user-menu-button-footer" class="focus:outline-none flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 transition">
+                <img id="footer-profile-foto" src="" alt="Perfil" class="object-cover w-full h-full rounded-full hidden" />
+                <svg id="footer-profile-icon" class="w-7 h-7 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </button>
+            <div id="user-dropdown-footer" class="hidden absolute right-0 bottom-12 mb-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 origin-bottom animate-fadeInUp">
+                <a href="perfil.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Mi perfil</a>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Configuración</a>
+                <a href="#" id="logout-btn-footer" class="block px-4 py-2 text-red-600 hover:bg-orange-100">Cerrar sesión</a>
+            </div>
+        </div>
     </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Iniciar Sesión</h2>
+                <button class="close-button" id="close-login-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="login-email" class="form-input" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="form-label">Contraseña</label>
+                        <input type="password" id="login-password" class="form-input" placeholder="Tu contraseña" required>
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Recordarme</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <div class="register-link">
+                        ¿No tienes una cuenta? <a href="#" id="show-register">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Crear Cuenta</h2>
+                <button class="close-button" id="close-register-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name" class="form-label">Nombre completo</label>
+                        <input type="text" id="register-name" class="form-input" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="register-email" class="form-input" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password" class="form-label">Contraseña</label>
+                        <input type="password" id="register-password" class="form-input" placeholder="Crea una contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password" class="form-label">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" class="form-input" placeholder="Confirma tu contraseña" required>
+                    </div>
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">Crear Cuenta</button>
+                    <div class="login-link">
+                        ¿Ya tienes una cuenta? <a href="#" id="show-login">Iniciar Sesión</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="map-modal" class="modal">
+        <div class="map-modal-content">
+            <div class="map-locations-list" id="map-locations-list"></div>
+            <div class="map-iframe-container">
+                <button id="close-map-modal">×</button>
+                <iframe id="map-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="js/main.js" type="module" defer></script>
-</body>
-</html>
-    <script>
-    // Simulación: cargar datos del usuario desde localStorage o variable global
-    document.addEventListener('DOMContentLoaded', function() {
-        let usuario = JSON.parse(localStorage.getItem('usuarioActivo')) || { nombre: 'Usuario', email: 'correo@ejemplo.com' };
-        // Cargar foto de perfil si existe
-        if (usuario.fotoPerfil) {
-            document.getElementById('profile-foto').src = usuario.fotoPerfil;
-            document.getElementById('profile-foto').classList.remove('hidden');
-            document.getElementById('profile-icon').classList.add('hidden');
-        } else {
-            document.getElementById('profile-foto').classList.add('hidden');
-            document.getElementById('profile-icon').classList.remove('hidden');
-        }
-        document.getElementById('profile-nombre').textContent = usuario.nombre || 'Usuario';
-        document.getElementById('profile-correo').textContent = usuario.email || 'correo@ejemplo.com';
-        document.getElementById('input-nombre').value = usuario.nombre || '';
-        document.getElementById('input-correo').value = usuario.email || '';
-        document.getElementById('guardar-perfil').onclick = function() {
-            usuario.nombre = document.getElementById('input-nombre').value;
-            usuario.email = document.getElementById('input-correo').value;
-            localStorage.setItem('usuarioActivo', JSON.stringify(usuario));
-            document.getElementById('profile-nombre').textContent = usuario.nombre;
-            document.getElementById('profile-correo').textContent = usuario.email;
-            alert('Perfil actualizado');
-        };
-        // Manejar carga de foto de perfil
-        document.getElementById('input-foto').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    usuario.fotoPerfil = evt.target.result;
-                    localStorage.setItem('usuarioActivo', JSON.stringify(usuario));
-                    document.getElementById('profile-foto').src = usuario.fotoPerfil;
-                    document.getElementById('profile-foto').classList.remove('hidden');
-                    document.getElementById('profile-icon').classList.add('hidden');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-    </script>
 </body>
 </html>

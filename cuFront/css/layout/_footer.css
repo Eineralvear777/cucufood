@@ -1,12 +1,111 @@
+/* cuFront/css/layout/_footer.css */
+
 .main-footer {
-    background-color: var(--secondary-color);
+    background-color: #111827; /* bg-gray-900 de topres.css */
     color: white;
     text-align: center;
     padding: var(--spacing-lg) var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-xl); /* Mantenemos el margen superior para separación */
+    padding-top: 2rem; /* pt-8 de topres.css */
+    padding-bottom: 2rem; /* py-8 de topres.css */
 }
+
+.main-footer .container {
+    max-width: 1280px; /* max-w-7xl de Tailwind, adaptado a tu container */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md); /* px-4 de Tailwind, adaptado a tu spacing */
+}
+
 .main-footer p {
     margin: 0;
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Color más suave para el texto general */
+}
+
+/* Flexbox y espaciado del footer (de topres.css) */
+.main-footer .flex {
+  display: flex;
+  flex-direction: column; /* md:flex-col por defecto */
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .main-footer .flex {
+    flex-direction: row; /* md:flex-row */
+  }
+}
+
+.main-footer .mb-4 {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 768px) {
+  .main-footer .mb-4 {
+    margin-bottom: 0; /* md:mb-0 */
+  }
+}
+
+/* Estilos del logo en el footer (de topres.css) */
+.main-footer .text-2xl {
+  font-size: 1.5rem; /* text-2xl */
+  line-height: 2rem; /* leading-8 */
+  font-weight: 700; /* font-bold */
+}
+
+.main-footer .text-orange-500 {
+  color: #f97316; /* text-orange-500 */
+}
+
+.main-footer .text-white {
+  color: #ffffff; /* text-white */
+}
+
+/* Espaciado de enlaces en el footer (de topres.css) */
+.main-footer .space-x-6 > * + * {
+  margin-left: 1.5rem; /* space-x-6 */
+}
+
+/* Estilos de enlaces en el footer (de topres.css) */
+.main-footer a {
+  color: #d1d5db; /* text-gray-300 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-footer a:hover {
+  color: #f97316; /* text-orange-500 */
+}
+
+/* Contenedor del menú de usuario en el footer (de topres.html) */
+/* Posicionamiento y visibilidad manejada por JS y Tailwind. */
+#user-menu-container-footer {
+    position: relative; /* Para el dropdown absoluto */
+    /* hidden está en el HTML, mostrado/ocultado por JS */
+}
+
+#user-menu-button-footer {
+    /* Clases de Tailwind en el HTML: w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 */
+    /* focus:outline-none flex items-center justify-center transition */
+}
+
+#footer-profile-foto {
+    /* Clases de Tailwind en el HTML: object-cover w-full h-full rounded-full hidden */
+}
+
+#footer-profile-icon {
+    /* Clases de Tailwind en el HTML: w-7 h-7 text-orange-400 absolute inset-0 m-auto */
+}
+
+#user-dropdown-footer {
+    /* Clases de Tailwind en el HTML: hidden absolute right-0 bottom-12 mb-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 origin-bottom animate-fadeInUp */
+    /* La animación animate-fadeInUp está en _typography.css */
+}
+
+/* Estilos de enlaces dentro del dropdown del footer */
+#user-dropdown-footer a {
+    /* Clases de Tailwind en el HTML: block px-4 py-2 text-gray-700 hover:bg-orange-100 */
+}
+#logout-btn-footer {
+    /* Clases de Tailwind en el HTML: block px-4 py-2 text-red-600 hover:bg-orange-100 */
 }
