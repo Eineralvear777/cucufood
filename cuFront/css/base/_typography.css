@@ -1,0 +1,27 @@
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+a {
+    color: var(--primary-color);
+    transition: color 0.2s ease-in-out;
+}
+a:hover {
+    color: var(--primary-color-dark);
+}
+small {
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+}

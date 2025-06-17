@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CucuFood - Top Restaurantes</title>
+    <title>CucuFood - Inicio</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body id="top-restaurants-page">
+<body id="home-page">
     <header class="main-header">
         <a href="index.html" class="main-header__logo">CucuFood</a>
         <button id="menu-toggle" class="nav__toggle-btn" aria-label="Abrir/Cerrar menú de navegación">
             ☰
         </button>
         <nav class="main-nav">
-            <a href="index.html">Inicio</a>
-            <a href="topres.html" class="active">Top Restaurantes</a>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="topres.html">Top Restaurantes</a>
             <a href="perfil.html">Mi Perfil</a>
             <a href="login.html">Iniciar Sesión</a>
         </nav>
     </header>
     <main class="main-content">
-        <section class="top-restaurants-page">
+        <section class="hero-section">
             <div class="container">
-                <div class="top-restaurants-header">
-                    <h1>Los Restaurantes Más Valorados de Cúcuta</h1>
-                    <p>Descubre los lugares preferidos por nuestros usuarios.</p>
-                </div>
-                <div id="top-restaurants-list" class="top-restaurants-list"></div>
+                <h1>Sabores de Cúcuta a un Clic</h1>
+                <p>Descubre y pide tus platos favoritos de los mejores restaurantes de la ciudad.</p>
+                <a href="#featured-restaurants" class="btn btn--primary">Explorar Restaurantes</a>
+            </div>
+        </section>
+        <section id="featured-restaurants" class="featured-restaurants">
+            <div class="container">
+                <h2>Restaurantes Destacados</h2>
+                <div id="restaurant-list" class="restaurant-grid"></div>
             </div>
         </section>
     </main>

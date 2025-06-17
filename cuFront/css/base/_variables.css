@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #FF6347;
+    --primary-color-dark: #cc4f38;
+    --secondary-color: #2c3e50;
+    --accent-color: #f39c12;
+    --text-color: #333;
+    --text-color-light: #666;
+    --bg-light: #f8f9fa;
+    --bg-dark: #34495e;
+    --border-color: #e0e0e0;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: 'Open Sans', sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.125rem;
+    --spacing-unit: 8px;
+    --spacing-xs: var(--spacing-unit);
+    --spacing-sm: calc(var(--spacing-unit) * 2);
+    --spacing-md: calc(var(--spacing-unit) * 3);
+    --spacing-lg: calc(var(--spacing-unit) * 4);
+    --spacing-xl: calc(var(--spacing-unit) * 6);
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --box-shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --box-shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+    --transition-ease: ease-in-out;
+}
