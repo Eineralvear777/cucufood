@@ -2,7 +2,7 @@
 import { loginUser } from '../modules/api.js'; // Asumo que aún usas esta función para la API
 import { isValidEmail, isValidPassword, showMessage, setLocalStorageItem } from '../modules/utils.js';
 import { updateAuthUI } from '../modules/auth_ui.js'; // Importamos la nueva función para actualizar la UI de autenticación
-
+import { createElementWithClass } from '../modules/dom_helpers.js'; 
 // Elementos del modal
 const loginModal = document.getElementById('login-modal');
 const registerModal = document.getElementById('register-modal');
